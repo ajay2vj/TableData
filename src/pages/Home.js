@@ -18,7 +18,7 @@ class Home extends Component {
 							<input type="text" placeholder="Search.." id="searchbar"/>
 						</div>
 					</div>
-					<table id="employee_table_larg">
+					<table id="employee_table_medium">
 						<thead>
 							<tr>
 								<th>First Name</th>
