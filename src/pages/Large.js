@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-function Large() {
+import contacts from './large.json';
+class Large extends Component {
+	render(){
     return(
         <div>
           <div className="parent-div">
@@ -16,7 +18,7 @@ function Large() {
 							<input type="text" placeholder="Search.." id="searchbar"/>
 						</div>
 					</div>
-					<table id="employee_table_large">
+					<table id="employee_table_larg">
 						<thead>
 							<tr>
 								<th>First Name</th>
@@ -26,12 +28,24 @@ function Large() {
 								<th>Salary</th>
 							</tr>
 						</thead>
-						<tbody>
-					
-						</tbody>
+						
+                {contacts.map(el => {
+                  return (
+										<tbody>
+											<td key={el.id} style={{display:"none"}}></td>
+											<td>{el.firstName}</td>
+											<td>{el.lastName}</td>
+											<td>{el.location}</td>
+											<td>{el.date}</td>
+											<td>{el.salary}</td>
+										</tbody>
+                  );
+                })}
+						
 					</table>
         </div>
     )
+		}
 }
 
 export default Large;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-function Medium() {
+import medium from './medium.json';
+class Medium extends Component {
+	render(){
     return(
         <div>
-					<div className="parent-div">
+          <div className="parent-div">
 						<div className="dropdown">
 							<button className="dropbtn">Choose Op</button>
 							<div className="dropdown-content">
@@ -13,10 +15,10 @@ function Medium() {
 							</div>
 						</div>
 						<div className="search-tab">
-							<input type="text" placeholder="Search.." id="searchbar" />
+							<input type="text" placeholder="Search.." id="searchbar"/>
 						</div>
 					</div>
-					<table id="employee_table_medium">
+					<table id="employee_table_larg">
 						<thead>
 							<tr>
 								<th>First Name</th>
@@ -26,12 +28,24 @@ function Medium() {
 								<th>Salary</th>
 							</tr>
 						</thead>
-						<tbody>
-					
-						</tbody>
+						
+                {medium.map(el => {
+                  return (
+										<tbody>
+											<td key={el.id} style={{display:"none"}}></td>
+											<td>{el.firstName}</td>
+											<td>{el.lastName}</td>
+											<td>{el.location}</td>
+											<td>{el.date}</td>
+											<td>{el.salary}</td>
+										</tbody>
+                  );
+                })}
+						
 					</table>
         </div>
     )
+		}
 }
 
 export default Medium;
