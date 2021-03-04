@@ -42,18 +42,12 @@ $(document).ready(function(){
   });
 });
 
-function search_animal() {
-  let input = document.getElementById('searchbar').value
-  input=input.toLowerCase();
-  let x = document.getElementById('employee_table_medium');
-   
-  for (i = 0; i < x.length; i++) {  
-      if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].style.display="none";
-      }
-      else {
-          x[i].style.display="list-item";                  
-      }
-  }
-}
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 

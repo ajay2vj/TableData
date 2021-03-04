@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import medium from './medium.json';
 import Pagination from './pagination';
 import Route from './Route';
+import SearchBox from './SearchBox';
 class Medium extends Component {
 	render(){
     return(
         <div>
           <div className="parent-div">
 						<Route/>
-						<div className="search-tab">
-							<input type="text" placeholder="Search.." id="searchbar"/>
-						</div>
+						<SearchBox />
 					</div>
 					<table id="employee_table_larg">
 						<thead>
@@ -25,13 +24,15 @@ class Medium extends Component {
 						
                 {medium.map(el => {
                   return (
-										<tbody>
-											<td key={el.id} style={{display:"none"}}></td>
-											<td>{el.firstName}</td>
-											<td>{el.lastName}</td>
-											<td>{el.location}</td>
-											<td>{el.date}</td>
-											<td>{el.salary}</td>
+										<tbody id="myTable">
+											<tr>
+												<td key={el.id} style={{display:"none"}}></td>
+												<td>{el.firstName}</td>
+												<td>{el.lastName}</td>
+												<td>{el.location}</td>
+												<td>{el.date}</td>
+												<td>{el.salary}</td>
+											</tr>
 										</tbody>
                   );
                 })}
