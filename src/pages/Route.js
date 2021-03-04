@@ -5,7 +5,7 @@ class Route extends Component {
     return(
         <div>
 					<div className="dropdown">
-						<button className="dropbtn">Choose Op</button>
+						<button className="dropbtn">Select <i class="fa fa-angle-double-down"></i></button>
 						<div className="dropdown-content">
 						<Link to="/">Small</Link>
 						<Link to="/medium">Medium</Link>

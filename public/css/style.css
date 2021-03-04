@@ -82,7 +82,7 @@ margin-left: 22.5%;
 margin-top: 50px;
 }
 .search-tab{
-padding-left: 47.4%;
+padding-left: 49.7%;
 }
 .option-tab>select {
 border: 0px solid;
@@ -158,4 +158,7 @@ height: 25px;
 .pagination a:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
+}
+i.fa.fa-angle-double-down {
+  margin: 0px 0px 0px 10px;
 }
