@@ -164,7 +164,7 @@ i.fa.fa-angle-double-down {
   }
   .pagination {
     display: none;
-    margin-left: 37%;
+    margin-left: 0%;
   }
   .paging-nav {
     padding-left: 46%;
@@ -182,7 +182,7 @@ i.fa.fa-angle-double-down {
   }
   .parent-div {
     display: flex;
-    margin-left: 5.5%;
+    margin-left: 6.5%;
     margin-top: 50px;
   }
   
