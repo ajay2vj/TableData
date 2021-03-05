@@ -68,7 +68,11 @@ export class Large extends PureComponent {
     render() {
         return (
             <div>
-									<Route/> <SearchBox/>
+							<div className="parent-div">
+								<Route/> 
+								<SearchBox/>
+							</div>
+									
                   <table border="1">
                      <thead>
                          <th>First Name</th>
