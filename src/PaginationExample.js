@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios';
 import ReactPaginate from 'react-paginate';
-import Route from './Route';
-import SearchBox from './SearchBox';
     
-export class Medium extends PureComponent {
+
+export class PaginationExample extends PureComponent {
 
     constructor(props) {
         super(props)
@@ -13,10 +12,12 @@ export class Medium extends PureComponent {
             offset: 0,
             tableData: [],
             orgtableData: [],
-            perPage: 11,
+            perPage: 10,
             currentPage: 0
         }
+
         this.handlePageClick = this.handlePageClick.bind(this);
+
     }
 
     handlePageClick = (e) => {
@@ -43,57 +44,53 @@ export class Medium extends PureComponent {
 	
     }
 
-    componentDidMount(){
+   componentDidMount(){
         this.getData();
     }
-
     getData() {
         axios
-            .get(`https://raw.githubusercontent.com/accuknox/TrainingAPI/main/medium.json`)
+            .get('https://jsonplaceholder.typicode.com/comments')
             .then(res => {
-
-                var data = res.data;
-				
-                var slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
-                
-
+                var tdata = res.data;
+                console.log('data-->'+JSON.stringify(tdata))
+				 var slice = tdata.slice(this.state.offset, this.state.offset + this.state.perPage)
                 this.setState({
-                    pageCount: Math.ceil(data.length / this.state.perPage),
-                    orgtableData :res.data,
+                    pageCount: Math.ceil(tdata.length / this.state.perPage),
+                    orgtableData : tdata,
                     tableData:slice
                 })
             });
     }
 
+
     render() {
         return (
             <div>
-									<Route/> <SearchBox/>
-                  <table border="1">
+                 <h1>Gk Techy</h1>
+
+                 <table border="1">
                      <thead>
-                         <th>First Name</th>
-                         <th>Last Name</th>
-                         <th>Location</th>
-                         <th>Date</th>
-                         <th>Salary</th>
+                         <th>Id</th>
+                         <th>Name</th>
+                         <th>Email</th>
+                         <th>Body</th>
 
                      </thead>
-                     <tbody id="myTable">
+                     <tbody>
                         {
                           this.state.tableData.map((tdata, i) => (
                                 <tr>
-                                    <td>{tdata.firstName}</td>
-                                    <td>{tdata.lastName}</td>
-                                    <td>{tdata.location}</td>
-                                    <td>{tdata.date}</td>
-                                    <td>{tdata.salary}</td>
+                                    <td>{tdata.id}</td>
+                                    <td>{tdata.name}</td>
+                                    <td>{tdata.email}</td>
+                                    <td>{tdata.body}</td>
                                 </tr>
                             
                           ))
                         }
 
                      </tbody>
-                 </table>  
+                 </table>   
 
                  <ReactPaginate
                     previousLabel={"prev"}
@@ -107,10 +104,9 @@ export class Medium extends PureComponent {
                     containerClassName={"pagination"}
                     subContainerClassName={"pages pagination"}
                     activeClassName={"active"}/>
-
             </div>
         )
     }
 }
 
-export default Medium
+export default PaginationExample
