@@ -91,7 +91,7 @@ height: 25px;
   border-left: 1px solid #000;
 }
 .pagination {
-  display: inline-block;
+  display: none;
   margin-left: 64%;
 }
 
@@ -116,6 +116,33 @@ height: 25px;
 i.fa.fa-angle-double-down {
   margin: 0px 0px 0px 10px;
 }
+.paging-nav {
+  padding-left: 62%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.paging-nav a {
+  margin: auto 1px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 7px 12px;
+  background: #408fe8;
+  color: white;
+  border-radius: 3px;
+}
+
+.paging-nav .selected-page {
+  background: #187ed5;
+  font-weight: bold;
+}
+
+.paging-nav,
+#employee_table_medium {
+  /* width: 400px; */
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
 @media screen and (max-width: 768px) {
 	/*Navigation CSS*/
 	table {
@@ -136,8 +163,23 @@ i.fa.fa-angle-double-down {
     text-decoration: none;
   }
   .pagination {
-    display: inline-block;
+    display: none;
     margin-left: 53%;
+  }
+  .paging-nav {
+    padding-left: 46%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .paging-nav a {
+    margin: auto 1px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 10px;
+    background: #408fe8;
+    color: white;
+    border-radius: 3px;
   }
   
 }
+

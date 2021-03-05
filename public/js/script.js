@@ -50,4 +50,15 @@ $(document).ready(function(){
     });
   });
 });
+$(document).ready(function() {
+  $('#').paging({limit:5});
+  $('#employee_table_medium').paging({
+
+    limit: 5,
+    rowDisplayStyle: 'block',
+    activePage: 0,
+    rows: []
+    
+    });
+});
 

@@ -11,7 +11,7 @@ class Large extends Component {
 						<Route/>
 						<SearchBox />
 					</div>
-					<table id="employee_table_larg">
+					<table id="employee_table_medium">
 						<thead>
 							<tr>
 								<th>First Name</th>
